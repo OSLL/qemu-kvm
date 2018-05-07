@@ -1,4 +1,4 @@
-all: vmcontrol.o create.o list.o destroy.o help.o
+all: vmcontrol.o create.o list.o destroy.o help.o suspend.o resume.o
 	gcc *.o -o vmcontrol -lvirt
 
 vmcontrol.o: vmcontrol.c vmcontrol.h
@@ -15,6 +15,12 @@ destroy.o: ./destroy/destroy.c ./destroy/destroy.h
 
 help.o: ./help/help.c ./help/help.h
 	gcc -c ./help/help.c
+
+suspend.o: ./suspend/suspend.c ./suspend/suspend.h
+	gcc -c ./suspend/suspend.c
+
+resume.o: ./resume/resume.c ./resume/resume.h
+	gcc -c ./resume/resume.c
 
 clean:
 	rm -rf *.o vmcontrol

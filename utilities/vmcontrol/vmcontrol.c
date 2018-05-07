@@ -28,6 +28,16 @@ int main(int argc, char **argv)
         if(argc == 3)
             destroyDomain(argv[2]);
     
+    } else if(!strcmp(argv[1], "suspend")) {
+
+        if(argc == 3)
+            suspendDomain(argv[2]);
+    
+    } else if(!strcmp(argv[1], "resume")) {
+
+        if(argc == 3)
+            resumeDomain(argv[2]);
+
     } else {
     
         printf("Unsupported argument: %s\n", argv[1]);
