@@ -16,14 +16,14 @@
     <emulator>/usr/bin/qemu-system-x86_64</emulator>
     <disk type='file' device='cdrom'>
       <driver name='qemu' type='raw'/>
-      <source file='/home/ivan/SE/qemu-kvm/test/linuxmint-18.3-cinnamon-64bit.iso'/>
+      <source file='/home/smokfyz/Downloads/linux-lite-4.0-64bit.iso'/>
       <target dev='hdc' bus='ide'/>
       <readonly/>
       <address type='drive' controller='0' bus='1' unit='0'/>
     </disk>
     <disk type='file' device='disk'>
       <driver name='qemu' type='qcow2'/>
-      <source file='/home/ivan/SE/qemu-kvm/test/mint.img'/>
+      <source file='/home/smokfyz/SE/lite.qcow'/>
       <target dev='hda'/>
     </disk>
     <video>
