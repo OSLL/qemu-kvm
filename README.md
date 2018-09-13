@@ -1,2 +1,2 @@
 # qemu-kvm
-[vmcontrol util discription](utilities/vmcontrol/README.md)
+* [**Vmcontrol utility description**](utilities/vmcontrol/README.md)
