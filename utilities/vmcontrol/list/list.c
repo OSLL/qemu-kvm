@@ -3,6 +3,8 @@
 #include <libvirt/libvirt.h>
 #include "list.h"
 
+#define printLine() for(int j = 0; j < 40; j++) printf("=");
+
 int showDomainList()
 {
 
@@ -16,7 +18,7 @@ int showDomainList()
     
     printf("%5s\t%20s\t%5s\n", "ID", "Name", "State");
     
-    for(int j = 0; j < 40; j++) printf("=");
+    printLine();
     printf("\n\n");
 
     for (int i = 0; i < ret; i++) {
