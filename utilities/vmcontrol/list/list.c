@@ -13,8 +13,10 @@ int showDomainList()
     
     virConnectPtr conn = virConnectOpen("qemu:///system");    
     ret = virConnectListAllDomains(conn, &domains, 0);
-    if (ret < 0)
-        printf("Error\n");
+    if (ret < 0) {
+        printf("Error: can't get the list of domains\n");
+        exit(EXIT_FAILURE);
+    }
     
     printf("%5s\t%20s\t%5s\n", "ID", "Name", "State");
     

@@ -1,7 +1,9 @@
 #include <libvirt/libvirt.h>
+#include <stdlib.h>
 #include "destroy.h"
 
 int destroyDomain(char *name) {
+
     virConnectPtr conn = virConnectOpen("qemu:///system");
     virDomainPtr domain = virDomainLookupByName(conn, name);
     
@@ -11,4 +13,5 @@ int destroyDomain(char *name) {
     }
 
     return 0;
+
 }

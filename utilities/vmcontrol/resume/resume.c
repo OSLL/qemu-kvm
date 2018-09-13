@@ -1,7 +1,9 @@
 #include <libvirt/libvirt.h>
+#include <stdlib.h>
 #include "resume.h"
 
 int resumeDomain(char *name) {
+
     virConnectPtr conn = virConnectOpen("qemu:///system");
     virDomainPtr domain = virDomainLookupByName(conn, name);
     
@@ -11,5 +13,6 @@ int resumeDomain(char *name) {
     }
 
     return 0;
+
 }
 

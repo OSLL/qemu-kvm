@@ -7,11 +7,29 @@ char *readXml(char *path)
 {
 
     FILE *xml_file = fopen(path, "r");
-    fseek(xml_file, 0, SEEK_END);
+    if( !xml_file ) {
+        printf("Error: can't open XML file\n");
+        exit(EXIT_FAILURE);
+    }
+    if(fseek(xml_file, 0, SEEK_END)) {
+        printf("Error: can't read XML file\n");
+        exit(EXIT_FAILURE);
+    }
     long fsize = ftell(xml_file);
-    fseek(xml_file, 0, SEEK_SET);
+    if(fsize < 0) {
+        printf("Error: can't read XML file\n");
+        exit(EXIT_FAILURE);
+    }
+    if(fseek(xml_file, 0, SEEK_SET)) {
+        printf("Error: can't read XML file\n");
+        exit(EXIT_FAILURE);
+    }
 
     char *content = (char*)malloc(fsize + 1);
+    if(!content) {
+        printf("Error: can't allocate memory\n");
+        exit(EXIT_FAILURE);
+    }
     fread(content, fsize, 1, xml_file);
     fclose(xml_file);
     

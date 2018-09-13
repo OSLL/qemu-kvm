@@ -6,6 +6,7 @@
 
 int main(int argc, char **argv)
 {
+
     struct globalArgs_t {
         char *xml_desc;
     } globalArgs;
@@ -58,44 +59,7 @@ int main(int argc, char **argv)
          
         opt = getopt_long( argc, argv, optString, longOpts, &longIndex );
     }
-/*
-    if(!strcmp(argv[1], "create")) {
-        
-        if(argc == 3) {
-            char *xml_desc = readXml(argv[2]);
-            createAndRunDomain(xml_desc);
-        }
 
-    } else if(!strcmp(argv[1], "list")) {
-    
-        showDomainList();
-    
-    } else if(!strcmp(argv[1], "help")) {
-    
-        printHelp();
-    
-    } else if(!strcmp(argv[1], "destroy")) {
-    
-        if(argc == 3)
-            destroyDomain(argv[2]);
-    
-    } else if(!strcmp(argv[1], "suspend")) {
-
-        if(argc == 3)
-            suspendDomain(argv[2]);
-    
-    } else if(!strcmp(argv[1], "resume")) {
-
-        if(argc == 3)
-            resumeDomain(argv[2]);
-
-    } else {
-    
-        printf("Unsupported argument: %s\n", argv[1]);
-        printf("For more information use: vmcontrol help\n");
-    
-    }
-*/
-    return 0;
+    exit(EXIT_SUCCESS);
 
 }
